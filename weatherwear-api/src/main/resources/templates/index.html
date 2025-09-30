@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WeatherWear</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="index-page rain"> <!-- Başlangıçta örnek olarak 'rain' verdik -->
+
+<!-- Hava durumuna göre değişecek efekt alanı -->
+<div class="weather-animation"></div>
+
+<!-- Ana içerik -->
+<div class="overlay">
+  <div class="search-box">
+    <div class="description">
+
+    Check the weather and get instant outfit suggestions!
+  </div>
+  <form class="search-form" action="/check" method="post">
+    <input type="text" name="city" placeholder="Enter a city">
+    <button type="submit">Get Weather</button>
+  </form>
+
+</div>
+
+</body>
+</html>

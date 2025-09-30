@@ -1,0 +1,200 @@
+/* === Genel Stil ve Animasyon === */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeInScale 0.7s ease-in-out;
+    background-color: #f9f2ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* === Arka Planlar (Hava Durumuna Göre) === */
+
+body.sunny-page {
+    background: url("/sun.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.rainy-page {
+    background: url("/rain.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.cloudy-page {
+    background: url("/cloudy.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.default-page {
+    background-color: #f4ede9;
+}
+
+/* === Sonuç Kutusu === */
+
+.result-container {
+    background-color: rgba(255, 255, 255, 0.5); /* SaydamlÄ±k */
+    backdrop-filter: blur(3px); /* BulanÄ±klaÅŸtÄ±rma efekti */
+    padding: 3vw;
+    margin: 4vw;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 80vw;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    animation: fadeInScale 0.7s ease-in-out;
+}
+
+.result-container h1 {
+    font-size: calc(1.5rem + 1vw);
+    margin-bottom: 1rem;
+}
+
+.result-container p {
+    font-size: calc(1rem + 0.3vw);
+    margin: 0.4rem 0;
+}
+
+.weather-details,
+.recommendation {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(2px);
+}
+
+/* === Buton Stili === */
+
+.back-button a {
+    display: inline-block;
+    font-size: calc(1rem + 0.2vw);
+    padding: 0.8em 1.6em;
+    border: none;
+    border-radius: 12px;
+    background-color: #a76d42;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button a:hover {
+    background-color: #8a5734;
+}
+
+/* === Ana Sayfa Stilini Bozma (DeÄŸiÅŸmeden Kalacak) === */
+
+body.index-page {
+    background: url("/wallpaper.png") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.description {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #a76d42;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.search-form input[type="text"] {
+    padding: 16px 18px;
+    font-size: 17px;
+    border-radius: 12px;
+    border: 1px solid #c2b9aa;
+    background-color: #fffdf8;
+    color: #3a2e2e;
+    width: 280px;
+    max-width: 90%;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search-form button {
+    padding: 16px 22px;
+    font-size: 17px;
+    border: none;
+    border-radius: 12px;
+    background-color: #a76d42;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #8a5734;
+}
+
+/* === Mobil Uyum === */
+
+@media (max-width: 600px) {
+    .result-container {
+        width: 90vw;
+        padding: 4vw;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search-form input[type="text"],
+    .search-form button {
+        width: 100%;
+    }
+}
+/* === Arama Kutusunu Kutu İçine Al === */
+.search-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    margin: auto;
+    animation: fadeInScale 0.7s ease-in-out;
+}
+
+body.index-page .search-box {
+    position: relative;
+    top: -50px;
+}
+
+/* Mobil uyum */
+@media (max-width: 600px) {
+    .search-box {
+        padding: 30px 20px;
+        top: 60px;
+    }
+}
+

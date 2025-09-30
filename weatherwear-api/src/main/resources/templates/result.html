@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Result</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body th:class="${cssClass}"> <!-- Hava durumuna göre: sunny-page, rainy-page, vs. -->
+
+<div class="result-container">
+    <h1>Weather Information for <span th:text="${city}">City</span></h1>
+
+    <div class="weather-details">
+        <p><strong>Condition:</strong> <span th:text="${weather}">Clear</span> - <span th:text="${description}">clear sky</span></p>
+        <p><strong>Feels Like:</strong> <span th:text="${temp}">22</span> °C</p>
+        <p><strong>Humidity:</strong> <span th:text="${humidity}">55</span>%</p>
+        <p><strong>Wind Speed:</strong> <span th:text="${windSpeed}">4.5</span> m/s</p>
+    </div>
+
+    <div class="recommendation">
+        <h2>Clothing Recommendation</h2>
+        <p th:text="${suggestion}">You should wear a light jacket.</p>
+    </div>
+
+    <div class="back-button">
+        <a href="/">Check Another City</a>
+    </div>
+</div>
+
+</body>
+</html>

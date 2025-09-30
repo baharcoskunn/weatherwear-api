@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>ClothingRecommender.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ClothingRecommender.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">weatherwear</span><span class="s2">.</span><span class="s1">service</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">springframework</span><span class="s2">.</span><span class="s1">stereotype</span><span class="s2">.</span><span class="s1">Service</span><span class="s2">;</span>
+
+<span class="s1">@Service</span>
+<span class="s0">public class </span><span class="s1">ClothingRecommender </span><span class="s2">{</span>
+
+    <span class="s0">public </span><span class="s1">String getSuggestion</span><span class="s2">(</span><span class="s1">String weatherType</span><span class="s2">, </span><span class="s0">double </span><span class="s1">feelsLikeTemp</span><span class="s2">) {</span>
+        <span class="s1">StringBuilder suggestion </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringBuilder</span><span class="s2">();</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt; </span><span class="s3">0</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Kalın mont, içlik, bere, eldiven, atkı, su geçirmez bot. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt;= </span><span class="s3">5</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Kalın kaban, kazak, termal içlik, atkı. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt;= </span><span class="s3">10</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Kaban veya kalın mont, sweatshirt/kazak. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt;= </span><span class="s3">15</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;İnce mont, kapüşonlu sweatshirt, uzun kollu tişört. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt;= </span><span class="s3">20</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;İnce ceket, hırka, uzun kollu tişört. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt;= </span><span class="s3">25</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Kısa kollu tişört, ince pantolon veya etek. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt;= </span><span class="s3">30</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Şort, tişört, elbise. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">feelsLikeTemp </span><span class="s2">&lt;= </span><span class="s3">35</span><span class="s2">) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Hafif ve bol kıyafetler, şapka, güneş gözlüğü. &quot;</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;İnce askılı giysiler, açık renkli kıyafetler. &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">weatherType</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s4">&quot;Rain&quot;</span><span class="s2">) || </span><span class="s1">weatherType</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s4">&quot;Drizzle&quot;</span><span class="s2">) || </span><span class="s1">weatherType</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s4">&quot;Thunderstorm&quot;</span><span class="s2">)) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Şemsiye, yağmurluk, su geçirmez ayakkabı unutmayın. &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">weatherType</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s4">&quot;Wind&quot;</span><span class="s2">) || </span><span class="s1">weatherType</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s4">&quot;Windy&quot;</span><span class="s2">)) {</span>
+            <span class="s1">suggestion</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s4">&quot;Rüzgâr kesen mont, kapüşonlu giysi tercih edilebilir. &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">return </span><span class="s1">suggestion</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
